@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tv-bg: #131722;
+  --tv-bg2: #1e222d;
+  --tv-bg3: #2B2B43;
+  --tv-border: #2B2B43;
+  --tv-text: #d1d4dc;
+  --tv-text-muted: #787b86;
+  --tv-green: #26a69a;
+  --tv-red: #ef5350;
+  --tv-blue: #2962ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--tv-bg);
+  color: var(--tv-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--tv-bg); }
+::-webkit-scrollbar-thumb { background: var(--tv-bg3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #363a45; }
+
+/* Selection */
+::selection { background: rgba(41, 98, 255, 0.3); }
+
+/* TradingView-style inputs */
+input, select, textarea {
+  background: var(--tv-bg2);
+  border: 1px solid var(--tv-border);
+  color: var(--tv-text);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--tv-blue);
+}
+
+/* Button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+}
+.btn-primary {
+  background: var(--tv-blue);
+  color: white;
+}
+.btn-primary:hover { background: #1e4bd8; }
+.btn-success {
+  background: var(--tv-green);
+  color: white;
+}
+.btn-success:hover { background: #1e8e83; }
+.btn-danger {
+  background: var(--tv-red);
+  color: white;
+}
+.btn-danger:hover { background: #d64545; }
+.btn-ghost {
+  background: transparent;
+  color: var(--tv-text-muted);
+  border: 1px solid var(--tv-border);
+}
+.btn-ghost:hover {
+  background: var(--tv-bg2);
+  color: var(--tv-text);
+}
+
+/* Card */
+.card {
+  background: var(--tv-bg2);
+  border: 1px solid var(--tv-border);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+/* Glow effects */
+.glow-green { box-shadow: 0 0 20px rgba(38, 166, 154, 0.15); }
+.glow-red { box-shadow: 0 0 20px rgba(239, 83, 80, 0.15); }
+.glow-blue { box-shadow: 0 0 20px rgba(41, 98, 255, 0.15); }
