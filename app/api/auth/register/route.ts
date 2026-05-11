@@ -20,22 +20,13 @@ export async function POST(req: NextRequest) {
     }
 
     const id = generateId('usr');
-    db.users.create({
-      id,
-      email,
-      username,
-      password: password, // In production, hash this
-      role: 'user',
-    });
+    db.users.create({ id, email, username, password, role: 'user' });
 
     const token = await createToken({ id, email, username, role: 'user' });
 
     return NextResponse.json({
       success: true,
-      data: {
-        user: { id, email, username, role: 'user' },
-        token,
-      },
+      data: { user: { id, email, username, role: 'user' }, token },
     }, { status: 201 });
   } catch (err) {
     console.error('Register error:', err);
